@@ -6,8 +6,8 @@ export default function Header() {
     <Flex
       h="16"
       flexShrink={0}
-      bg="gray.800"
-      color="gray.100"
+      bg="homeBgSecondary"
+      color="textPrimary"
       alignItems="center"
       px="4"
       justifyContent="space-between"
@@ -15,9 +15,7 @@ export default function Header() {
       <Box>
         <Logo />
       </Box>
-      <Box>
-        {/* <Text>中间标题</Text> */}
-      </Box>
+      <Box>{/* <Text>中间标题</Text> */}</Box>
       <Box>
         <User />
       </Box>
