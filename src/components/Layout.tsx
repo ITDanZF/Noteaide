@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router';
 import { Flex, Box } from '@chakra-ui/react';
 import Header from './Header';
+import Footer from './Footer';
 
 export default function Layout() {
   return (
@@ -12,7 +13,7 @@ export default function Layout() {
         <Outlet />
       </Box>
       <Box h="16" flexShrink={0} bg="gray.900" color="gray.100">
-        Footer
+        <Footer />
       </Box>
     </Flex>
   );

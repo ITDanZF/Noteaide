@@ -1,5 +1,6 @@
 import { Flex, Box, Text } from '@chakra-ui/react';
 import Logo from '@/components/Header/Logo';
+import User from '@/components/Header/User';
 export default function Header() {
   return (
     <Flex
@@ -15,10 +16,10 @@ export default function Header() {
         <Logo />
       </Box>
       <Box>
-        <Text>中间标题</Text>
+        {/* <Text>中间标题</Text> */}
       </Box>
       <Box>
-        <Text>右侧内容</Text>
+        <User />
       </Box>
     </Flex>
   );
