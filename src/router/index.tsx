@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
-import Chat from '@/pages/Chat';
+import AiDraw from '@/pages/AiDraw';
 
 const router = createBrowserRouter([
   {
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/Chat',
-        element: <Chat />,
+        path: '/AiDraw',
+        element: <AiDraw />,
       },
     ],
   },

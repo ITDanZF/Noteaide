@@ -1,9 +1,12 @@
 import { Splitter, Box } from '@chakra-ui/react';
-export default function Chat() {
+import Chat from '@/pages/AiDraw/Chat';
+export default function AiDraw() {
   return (
     <Splitter.Root defaultSize={[25, 75]} panels={[{ id: 'sidebar' }, { id: 'content' }]} h="100%">
       <Splitter.Panel id="sidebar">
-        <Box p="4">侧边栏</Box>
+        <Box p="4">
+          <Chat />
+        </Box>
       </Splitter.Panel>
       <Splitter.ResizeTrigger id="sidebar:content" />
       <Splitter.Panel id="content">
