@@ -9,7 +9,7 @@ export default function Layout() {
       <Box h="16" flexShrink={0} bg="homeBgSecondary" color="textPrimary">
         <Header />
       </Box>
-      <Box flex="1" overflow="hidden">
+      <Box flex="1" overflow="hidden" bg="homeBg">
         <Outlet />
       </Box>
       <Box h="16" flexShrink={0} bg="homeBg" color="textPrimary">

@@ -4,11 +4,11 @@ const config = defineConfig({
   theme: {
     tokens: {
       colors: {
-        homeBg: { value: '#0C1929' },
-        homeBgSecondary: { value: '#1E3A5F' },
-        textPrimary: { value: '#FFFFFF' },
-        textSecondary: { value: '#D4D4D4' },
-        accentBlue: { value: '#3B82F6' },
+        homeBg: { value: '#0f172a' },
+        homeBgSecondary: { value: '#1e3a5f' },
+        textPrimary: { value: '#f8fafc' },
+        textSecondary: { value: '#94a3b8' },
+        accentBlue: { value: '#3b82f6' },
         blue: {
           50: { value: '#E6F0FF' },
           100: { value: '#B3D1FF' },
