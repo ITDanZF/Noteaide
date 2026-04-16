@@ -4,7 +4,7 @@ export default function AiDraw() {
   return (
     <Splitter.Root defaultSize={[25, 75]} panels={[{ id: 'sidebar' }, { id: 'content' }]} h="100%">
       <Splitter.Panel id="sidebar">
-        <Box p="4" bg="homeBgSecondary">
+        <Box p="4">
           <Chat />
         </Box>
       </Splitter.Panel>

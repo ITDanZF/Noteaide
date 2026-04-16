@@ -12,9 +12,9 @@ export default function Layout() {
       <Box flex="1" overflow="hidden" bg="homeBg">
         <Outlet />
       </Box>
-      <Box h="16" flexShrink={0} bg="homeBg" color="textPrimary">
+      {/* <Box h="16" flexShrink={0} bg="homeBg" color="textPrimary">
         <Footer />
-      </Box>
+      </Box> */}
     </Flex>
   );
 }

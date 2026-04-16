@@ -1,9 +1,74 @@
 import { Box } from '@chakra-ui/react';
+import TypeIt from 'typeit-react';
+
+interface TextSegment {
+  text: string;
+  color: string;
+  bold?: boolean;
+}
+
+const textTemplate: TextSegment[][] = [
+  [
+    { text: 'Noteaide', color: '#00d9ff', bold: true },
+    { text: '是一个基于', color: '#ffffff' },
+    { text: '人工智能', color: '#ff6b6b' },
+    { text: '的', color: '#ffffff' },
+    { text: '三维建模', color: '#ffd93d' },
+    { text: '智能体项目。', color: '#ffffff' },
+  ],
+  [
+    { text: '用户可以通过', color: '#ffffff' },
+    { text: '自然语言对话', color: '#00d9ff' },
+    { text: '的方式，与 ', color: '#ffffff' },
+    { text: 'AI 助手', color: '#ff6b6b', bold: true },
+    { text: ' 交互来创建和编辑', color: '#ffffff' },
+    { text: '三维模型', color: '#ffd93d' },
+    { text: '。', color: '#ffffff' },
+  ],
+  [
+    { text: '无需专业的 3D 建模技能，只需描述你想要的模型，', color: '#ffffff' },
+    { text: 'AI', color: '#ff6b6b', bold: true },
+    { text: ' 就能帮你实现。', color: '#ffffff' },
+  ],
+];
+
+const fontSizes = ['2xl', 'lg', 'md'];
 
 export default function Home() {
   return (
-    <Box h="full" bg="homeBg">
-      Home
+    <Box h="full" bg="homeBg" display="flex" justifyContent="center" alignItems="center">
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        textAlign="center"
+        p={8}
+      >
+        <TypeIt
+          options={{
+            speed: 80,
+            cursorChar: '丨',
+            html: true,
+            breakLines: true,
+          }}
+          getBeforeInit={instance => {
+            textTemplate.forEach((line, lineIndex) => {
+              line.forEach(segment => {
+                instance.type(
+                  `<span style="color:${segment.color};font-weight:${segment.bold ? 'bold' : 'normal'};font-size:${fontSizes[lineIndex]}">${segment.text}</span>`
+                );
+              });
+              if (lineIndex < textTemplate.length - 1) {
+                instance.break('');
+              }
+            });
+            return instance;
+          }}
+        >
+          <span />
+        </TypeIt>
+      </Box>
     </Box>
   );
 }
