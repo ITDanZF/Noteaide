@@ -1,6 +1,7 @@
 import { Box, Button } from '@chakra-ui/react';
 import TypeIt from 'typeit-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 interface TextSegment {
   text: string;
@@ -37,6 +38,7 @@ const fontSizes = ['2.5rem', '2rem', '1.5rem'];
 
 export default function Home() {
   const [isShowbutton, setShowbutton] = useState(false);
+  const navigate = useNavigate();
   return (
     <Box
       h="full"
@@ -97,6 +99,7 @@ export default function Home() {
           transition="all 0.3s ease"
           opacity={isShowbutton ? 1 : 0}
           pointerEvents={isShowbutton ? 'auto' : 'none'}
+          onClick={() => navigate('/AiDraw')}
         >
           立即体验
         </Button>
