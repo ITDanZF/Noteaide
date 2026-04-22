@@ -1,5 +1,6 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Button } from '@chakra-ui/react';
 import TypeIt from 'typeit-react';
+import { useState } from 'react';
 
 interface TextSegment {
   text: string;
@@ -32,11 +33,21 @@ const textTemplate: TextSegment[][] = [
   ],
 ];
 
-const fontSizes = ['2xl', 'lg', 'md'];
+const fontSizes = ['2.5rem', '2rem', '1.5rem'];
 
 export default function Home() {
+  const [isShowbutton, setShowbutton] = useState(false);
   return (
-    <Box h="full" bg="homeBg" display="flex" justifyContent="center" alignItems="center">
+    <Box
+      h="full"
+      backgroundImage="url('/bg.svg')"
+      backgroundSize="cover"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+    >
       <Box
         display="flex"
         flexDirection="column"
@@ -45,12 +56,16 @@ export default function Home() {
         textAlign="center"
         p={8}
       >
+        {/* @ts-expect-error TypeIt types are incompatible */}
         <TypeIt
           options={{
             speed: 80,
             cursorChar: '丨',
             html: true,
             breakLines: true,
+            afterComplete: () => {
+              setShowbutton(true);
+            },
           }}
           getBeforeInit={instance => {
             textTemplate.forEach((line, lineIndex) => {
@@ -60,7 +75,7 @@ export default function Home() {
                 );
               });
               if (lineIndex < textTemplate.length - 1) {
-                instance.break('');
+                instance.break();
               }
             });
             return instance;
@@ -68,6 +83,23 @@ export default function Home() {
         >
           <span />
         </TypeIt>
+        <Button
+          mt={8}
+          size="lg"
+          variant="ghost"
+          color="teal.400"
+          border="2px solid"
+          borderColor="teal.400"
+          px={12}
+          py={7}
+          fontSize="2xl"
+          _hover={{ bg: 'teal.900', transform: 'scale(1.05)' }}
+          transition="all 0.3s ease"
+          opacity={isShowbutton ? 1 : 0}
+          pointerEvents={isShowbutton ? 'auto' : 'none'}
+        >
+          立即体验
+        </Button>
       </Box>
     </Box>
   );
