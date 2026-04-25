@@ -1,6 +1,7 @@
 import { Box, Textarea, HStack } from '@chakra-ui/react';
 import type { ChangeEvent } from 'react';
 import { useRef } from 'react';
+import ChatDialogFun from './ChatDialogFun';
 export default function ChatDialog() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -14,7 +15,7 @@ export default function ChatDialog() {
       <Box bg="homeBgTransparent" borderRadius="md" border="1px solid" borderColor="blue.200" p="4">
         <Box>
           <Textarea
-            placeholder="输入你的问题..."
+            placeholder="向Noteaide提问..."
             resize="none"
             rows={1}
             onInput={handleInput}
@@ -44,10 +45,7 @@ export default function ChatDialog() {
             _placeholder={{ color: 'gray.400' }}
           />
         </Box>
-        <HStack>
-          <Box>123</Box>
-          <Box>456</Box>
-        </HStack>
+        <ChatDialogFun />
       </Box>
     </>
   );
