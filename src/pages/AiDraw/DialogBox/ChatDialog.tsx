@@ -10,6 +10,12 @@ export default function ChatDialog() {
     textarea.style.height = 'auto';
     textarea.style.height = `${Math.min(textarea.scrollHeight, 150)}px`;
   };
+  // shitf + 回车换行
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+    }
+  };
   return (
     <>
       <Box bg="homeBgTransparent" borderRadius="md" border="1px solid" borderColor="blue.200" p="4">
@@ -18,11 +24,14 @@ export default function ChatDialog() {
             placeholder="向Noteaide提问..."
             resize="none"
             rows={1}
+            fontSize="lg"
             onInput={handleInput}
+            onKeyDown={handleKeyDown}
             style={{
               minHeight: '24px',
               maxHeight: '200px',
               height: 'auto',
+              lineHeight: '1.6',
             }}
             border="none"
             css={{
