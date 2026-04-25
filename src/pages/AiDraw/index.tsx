@@ -4,7 +4,7 @@ export default function AiDraw() {
   return (
     <Flex h="100%">
       <Box w="50rem" flexShrink={0}>
-        <Box p="4">
+        <Box>
           <Chat />
         </Box>
       </Box>

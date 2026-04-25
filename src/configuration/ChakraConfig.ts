@@ -5,6 +5,7 @@ const config = defineConfig({
     tokens: {
       colors: {
         homeBg: { value: '#0f172a' },
+        homeBgTransparent: { value: 'rgba(42, 58, 90, 0.8)' },
         homeBgSecondary: { value: '#1e3a5f' },
         textPrimary: { value: '#f8fafc' },
         textSecondary: { value: '#94a3b8' },
