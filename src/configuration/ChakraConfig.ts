@@ -15,7 +15,7 @@ const config = defineConfig({
           200: { value: '#80B3FF' },
           300: { value: '#4D94FF' },
           400: { value: '#1E75FF' },
-          500: { value: '#3B82F6' },
+          500: { value: '#3b82f6' },
           600: { value: '#2563EB' },
           700: { value: '#1D4ED8' },
           800: { value: '#1E40AF' },
@@ -23,6 +23,11 @@ const config = defineConfig({
           950: { value: '#0C1929' },
         },
       },
+    },
+  },
+  globalCss: {
+    body: {
+      color: 'white',
     },
   },
 });
