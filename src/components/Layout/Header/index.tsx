@@ -1,6 +1,6 @@
 import { Flex, Box, Text } from '@chakra-ui/react';
-import Logo from '@/components/Header/Logo';
-import User from '@/components/Header/User';
+import Logo from '@/components/Layout/Header/Logo';
+import User from '@/components/Layout/Header/User';
 export default function Header() {
   return (
     <Flex

@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router';
-import Layout from '@/components/Layout';
+import Layout from '@/components/Layout/index';
 import Home from '@/pages/Home';
 import AiDraw from '@/pages/AiDraw';
 
