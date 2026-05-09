@@ -18,7 +18,15 @@ export default function ChatDialog() {
   };
   return (
     <>
-      <Box bg="homeBgTransparent" borderRadius="md" border="1px solid" borderColor="blue.200" p="4">
+      <Box
+        bg="homeBgTransparent"
+        borderRadius="md"
+        border="1px solid"
+        borderColor="blue.200"
+        p="4"
+        maxWidth="700px"
+        width="100%"
+      >
         <Box>
           <Textarea
             placeholder="向Noteaide提问..."
